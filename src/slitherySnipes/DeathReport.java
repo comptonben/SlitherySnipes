@@ -3,6 +3,6 @@ package slitherySnipes;
 public class DeathReport {
 	public int year;
 	public int age;
-	CauseOfDeath cause;
+	public CauseOfDeath cause;
 	
 }
