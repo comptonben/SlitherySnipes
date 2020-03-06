@@ -1,4 +1,4 @@
-package specBTesting;
+package unitTests;
 
 public class Jester {
 	public void CommentOnStart() {

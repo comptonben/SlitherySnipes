@@ -1,4 +1,4 @@
-package specBTesting;
+package unitTests;
 
 public class Weapon {
 	private String archetype;

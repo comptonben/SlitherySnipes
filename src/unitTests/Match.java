@@ -1,4 +1,4 @@
-package specBTesting;
+package unitTests;
 
 public class Match {
 	public static Fighter fighter1;
