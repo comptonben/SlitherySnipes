@@ -1,3 +1,0 @@
-module slitherySnipes {
-	requires junit;
-}
