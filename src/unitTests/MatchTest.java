@@ -1,3 +1,10 @@
+/**
+ * Class for Testing the Match class
+ * 
+ * @author Jared Boggs
+ * @author Emily Coke
+ * @author Ben Compton
+ */
 package unitTests;
 
 import static org.junit.Assert.*;
@@ -16,6 +23,9 @@ public class MatchTest {
 	private Fighter fighter2;
 	private Jester jester;
 	
+	/**
+	 * instantiate two fighters and one jester to be used during the match
+	 */
 	@Before
 	public void setup() {
 		fighter1 = new Fighter(10, 5, 5, WeaponFactory.MakeWeapon(), "Hercules");
@@ -23,6 +33,12 @@ public class MatchTest {
 		jester = new Jester();
 	}
 
+	/**
+	 * test that a match can be played
+	 * 
+	 * @result the jester's starting, middle, and ending comments
+	 * are captured from stdout signaling the match's runtime
+	 */
 	@Test
 	public void PlayMatchTest() {
 		final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
