@@ -2,12 +2,17 @@ package slitherySnipes;
 
 //use this class to test our code
 
+/**
+ * @author Jared Boggs
+ * @author Ben Compton
+ * @author Emily Coke
+ * @version 1.0
+ * @since 1.0
+ */
 public class Main {
 	public static void main(String[] args) {
 		Menu mainMenu = new Menu();
-		mainMenu.SetSimulationParameters();
-		mainMenu.RunSimulation();
-		mainMenu.ReadDeathReport();
-		
+		mainMenu.uiMenu();
+		System.out.println("Exiting\n");
 	}
 }
