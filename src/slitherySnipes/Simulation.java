@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.List;
 
+/**
+ * @author Jared Boggs
+ * @version 1.0
+ * @since 1.0
+ */
 public class Simulation {
 	//vars
 	private List<DeathReport> deaths = new ArrayList<DeathReport>();
@@ -13,7 +18,16 @@ public class Simulation {
 	
 	
 	
-	//start a new simulation
+	/**
+	 * Core of the program. Runs a 200-yr simulation of snipes
+	 * 
+	 * based on the current environment settings, simulates a starting population of snipes
+	 * for 200 years (may end early if all snipes dead). Every year predators have a chance to attack the snipes,
+	 * snipes find food, snipes lose energy, and snipes reproduce
+	 * 
+	 * @param none
+	 * @return void
+	 */
 	public void RunNewSimulation() {
 		deaths.clear();
 		snipes.clear();
@@ -121,7 +135,13 @@ public class Simulation {
 	
 	
 	
-	//give death strings to menu
+	/**
+	 * creates a string with all the information of the individual death reports from current simulation
+	 * Return this string to the menu class as one large deathReport string
+	 * 
+	 * @params none
+	 * @return String
+	 */
 	public String SummarizeDeaths() {
 		String summary = "";
 		
@@ -130,11 +150,7 @@ public class Simulation {
 			summary += "Snipe " + String.valueOf(i) + " died due to " + 
 					String.valueOf(deaths.get(i).cause) + " in year " + String.valueOf(deaths.get(i).year) + 
 					" at age " + String.valueOf(deaths.get(i).age) + "\n";
-			
 		}
-
-				
 		return summary;
 	}
-	
 }

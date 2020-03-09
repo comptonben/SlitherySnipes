@@ -2,6 +2,11 @@ package slitherySnipes;
 
 import java.util.Random;
 
+/**
+ * @author Jared Boggs
+ * @version 1.0
+ * @since 1.0
+ */
 public class Snipe {
 	public boolean beakIsLong;
 	public boolean bodyIsFat;
@@ -11,6 +16,14 @@ public class Snipe {
 	public boolean isAlive;
 	public int energy;
 	
+	/**
+	 * general snipe class constructor
+	 * 
+	 * @param longBeak		is the snipe's beak long or short?
+	 * @param fatBody		is the snipe's body fat or skinny?
+	 * @param distanceFlier	is the snipe a long distance flier or short distance flier?
+	 * @param conservGenes	does the snipe have conservative genes or spontaneous genes?
+	 */
 	public Snipe(boolean longBeak, boolean fatBody, boolean distanceFlier, boolean conservGenes) {
 		beakIsLong = longBeak;
 		bodyIsFat = fatBody;
@@ -21,7 +34,12 @@ public class Snipe {
 		energy = 2; //snipes are born with 2 energy
 	}
 	
-	//return snipe's chance of getting food this year
+	/**
+	 * calculates this snipe's probability of finding food
+	 * 
+	 * @param none
+	 * @return Float
+	 */
 	public Float GetFoodChance() {  //MOVE TO CONSTRUCTOR
 		float foodChance = (float) 0.5;
 		
@@ -41,7 +59,12 @@ public class Snipe {
 	}
 	
 	
-	//return snipe's chance of survival this year
+	/**
+	 * calculates this snipe's probability of surviving a predator encounter
+	 * 
+	 * @param none
+	 * @return Float
+	 */
 	public Float GetSurvivalChance() {
 		float survChance = (float) 0.5;
 		
@@ -69,7 +92,13 @@ public class Snipe {
 	}
 		
 	
-	//generate a new snipe from 2 snipes mating
+	/**
+	 * creates a new snipe offspring from this snipe and another snipe passed into method.
+	 * Uses parents' genetic traits to determine traits of offspring snipe
+	 * 
+	 * @param mate	pointer to another snipe object
+	 * @return 		new snipe object with traits of parents
+	 */
 	public Snipe GenerateOffspring(Snipe mate) {//pass mate and which traits from who
 		boolean childBeakLong = false;
 		boolean childBodyFat = false;
@@ -183,7 +212,11 @@ public class Snipe {
 	}
 	
 	
-	//lose energy
+	/**
+	 * deduces energy units from snipe
+	 * 
+	 * @param energyLost	the amount of energy units to consume from this snipe
+	 */
 	public void LoseEnergy(int energyLost) {
 		energy = energy - energyLost;
 	}
