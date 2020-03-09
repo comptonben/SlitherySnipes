@@ -1,3 +1,10 @@
+/**
+ * Class for Testing the Jester class
+ * 
+ * @author Jared Boggs
+ * @author Emily Coke
+ * @author Ben Compton
+ */
 package unitTests;
 
 import static org.junit.Assert.*;
@@ -13,16 +20,30 @@ import org.junit.Test;
 public class JesterTest {
 	private Jester jester;
 
+	/**
+	 * creates a new Jester object to use during the test cases
+	 * that need one other than the test for instantiation
+	 */
 	@Before
 	public void setup() {
 		jester = new Jester();
 	}
 	
+	/**
+	 * test that you can instantiate an object of the Jester class
+	 * 
+	 * @result an instance of the Jester class is created.
+	 */
 	@Test
 	public void canCreateJesterTest() {
 		assertNotNull(jester);
 	}
 	
+	/**
+	 * test that the jester will relay the start comment
+	 * 
+	 * @result the start comment is captured from stdout of the program
+	 */
 	@Test
 	public void startCommentTest() {
 		final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
@@ -39,6 +60,11 @@ public class JesterTest {
 		System.setOut(System.out);
 	}
 	
+	/**
+	 * test that the jester will relay the middle comment
+	 * 
+	 * @result the middle comment is captured from stdout of the program
+	 */
 	@Test
 	public void middleCommentTest() {
 		final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
@@ -55,6 +81,11 @@ public class JesterTest {
 		System.setOut(System.out);
 	}
 	
+	/**
+	 * test that the jester will relay the end comment
+	 * 
+	 * @result the end comment is captured from stdout of the program
+	 */
 	@Test
 	public void endCommentTest() {
 		final ByteArrayOutputStream outStream = new ByteArrayOutputStream();

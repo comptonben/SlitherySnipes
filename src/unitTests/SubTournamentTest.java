@@ -1,3 +1,10 @@
+/**
+ * Class for Testing the SubTournament class
+ * 
+ * @author Jared Boggs
+ * @author Emily Coke
+ * @author Ben Compton
+ */
 package unitTests;
 
 import static org.junit.Assert.*;
@@ -12,6 +19,10 @@ public class SubTournamentTest {
 	private List<Fighter> fighters = new ArrayList<Fighter>();
 	private Jester jester;
 	
+	/**
+	 * setup two fighters in a list of Fighter objects and a jester to
+	 * be used to setup a subtournament
+	 */
 	@Before
 	public void setup() {
 		Fighter f1 = new Fighter(1, 1, 1, WeaponFactory.MakeWeapon(), "Hercules");
@@ -22,6 +33,11 @@ public class SubTournamentTest {
 		jester = new Jester();
 	}
 	
+	/**
+	 * test that you can instantiate an object of the SubTournament class
+	 * 
+	 * @result an instance of the SubTournament class is created.
+	 */
 	@Test
 	public void canCreateSubTournamentTest() {
 		SubTournament subTourney = new SubTournament(fighters, jester);
@@ -29,6 +45,12 @@ public class SubTournamentTest {
 		assertTrue(subTourney instanceof SubTournament);
 	}
 	
+	/**
+	 * test who will be the winner of the subtournament
+	 * 
+	 * @result the DetermineWinner method will return an instance of the
+	 * Fighter class as the winner of the subtournament
+	 */
 	@Test
 	public void determineWinnerTest() {
 		SubTournament subTourney = new SubTournament(fighters, jester);

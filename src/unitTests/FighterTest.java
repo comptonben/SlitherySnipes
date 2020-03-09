@@ -1,3 +1,10 @@
+/**
+ * Class for Testing the Fighter class
+ * 
+ * @author Jared Boggs
+ * @author Emily Coke
+ * @author Ben Compton
+ */
 package unitTests;
 
 import static org.junit.Assert.*;
@@ -13,6 +20,9 @@ public class FighterTest {
 	int[] reaches;
 	int[] speeds;
 	
+	/**
+	 * create a weapon and setup test ranges for the unit tests below
+	 */
 	@Before
 	public void setup() {
 		testWeapon = WeaponFactory.MakeWeapon();
@@ -21,13 +31,24 @@ public class FighterTest {
 		speeds = IntStream.rangeClosed(1, 10).toArray();
 	}
 	
+	/**
+	 * test that you can instantiate an object of the Fighter class
+	 * 
+	 * @result an instance of the Fighter class is created.
+	 */
 	@Test
 	public void canCreateFighterTest() {
 		Fighter fighter = new Fighter(10, 5, 5, testWeapon, "Hercules");
 		
-		assertNotNull(fighter);
+		assertTrue(fighter instanceof Fighter);
 	}
 	
+	/**
+	 * test that any fighter with a higher strength in the range is
+	 * stronger than any fighter with a lower strength
+	 * 
+	 * @result fighters are created across each range and tested for strength
+	 */
 	@Test
 	public void fighterIsStrongerTest() {
 		for(int strength : strengths) {
@@ -40,6 +61,12 @@ public class FighterTest {
         }
 	}
 	
+	/**
+	 * test that any fighter with a lower strength in the range is
+	 * weaker than any fighter with a higher strength
+	 * 
+	 * @result fighters are created across each range and tested for strength
+	 */
 	@Test
 	public void fighterIsWeakerTest() {
 		for(int strength : strengths) {
@@ -52,6 +79,12 @@ public class FighterTest {
         }
 	}
 	
+	/**
+	 * test that any fighter with a longer reach in the range has a
+	 * longer reach than than any fighter with a shorter reach
+	 * 
+	 * @result fighters are created across each range and tested for reach
+	 */
 	@Test
 	public void fighterHasLongerReachTest() {
 		for(int reach : reaches) {
@@ -64,6 +97,12 @@ public class FighterTest {
         }
 	}
 	
+	/**
+	 * test that any fighter with a shorter reach in the range has a
+	 * shorter reach than than any fighter with a longer reach
+	 * 
+	 * @result fighters are created across each range and tested for reach
+	 */
 	@Test
 	public void fighterHasShorterReachTest() {
 		for(int reach : reaches) {
@@ -76,6 +115,12 @@ public class FighterTest {
         }
 	}
 	
+	/**
+	 * test that any fighter with a higher speed in the range has a
+	 * higher speed than than any fighter with a lower speed
+	 * 
+	 * @result fighters are created across each range and tested for speed
+	 */
 	@Test
 	public void fighterIsFasterTest() {
 		for(int speed : speeds) {
@@ -88,6 +133,12 @@ public class FighterTest {
         }
 	}
 	
+	/**
+	 * test that any fighter with a lower speed in the range has a
+	 * lower speed than than any fighter with a higher speed
+	 * 
+	 * @result fighters are created across each range and tested for speed
+	 */
 	@Test
 	public void fighterIsSlowerTest() {
 		for(int speed : speeds) {
@@ -100,6 +151,14 @@ public class FighterTest {
         }
 	}
 	
+	/**
+	 * test the getter for attack performance within the Fighter class
+	 * 
+	 * this will change due to simulation randomness
+	 * 
+	 * @result the getter will return the same attack as the weapon that the fighter
+	 * is constructed with
+	 */
 	@Test
 	public void getAttackPerfTest() {
 		Fighter fighter = new Fighter(5, 5, 5, testWeapon, "Hercules");
@@ -107,6 +166,14 @@ public class FighterTest {
 		assertEquals(fighter.GetAttackPerformance(), testWeapon.getAttackRating());
 	}
 	
+	/**
+	 * test the getter for defense performance within the Fighter class
+	 * 
+	 * this will change due to simulation randomness
+	 * 
+	 * @result the getter will return the same defense as the weapon that the fighter
+	 * is constructed with
+	 */
 	@Test
 	public void getDefensePerfTest() {
 		Fighter fighter = new Fighter(5, 5, 5, testWeapon, "Hercules");
