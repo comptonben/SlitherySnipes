@@ -7,6 +7,8 @@ import java.util.InputMismatchException;
 
 /**
  * @author Jared Boggs
+ * @author Ben Compton
+ * @author Emily Coke
  * @version 1.0
  * @since 1.0
  */
