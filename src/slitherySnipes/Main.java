@@ -5,9 +5,7 @@ package slitherySnipes;
 public class Main {
 	public static void main(String[] args) {
 		Menu mainMenu = new Menu();
-		mainMenu.SetSimulationParameters();
-		mainMenu.RunSimulation();
-		mainMenu.ReadDeathReport();
-		
+		mainMenu.uiMenu();
+		System.out.println("Exiting\n");
 	}
 }
